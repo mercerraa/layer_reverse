@@ -10,7 +10,7 @@ about=Reverse order of highlighted layers
 tags=layers, contents
 experimental=True
 
-tracker=http://bugs
+tracker=https://github.com/mercerraa/layer_reverse/issues
 repository=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
 homepage=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
 
