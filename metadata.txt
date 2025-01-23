@@ -4,7 +4,7 @@ description=Reverse order of highlighted layers
 version=1.0
 qgisMinimumVersion=3.0
 author=Andrew Mercer
-email=https://github.com/mercerraa
+email=mercerraa@gmail.com
 
 about=Reverse order of highlighted layers
 tags=layers, contents

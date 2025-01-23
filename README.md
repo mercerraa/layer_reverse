@@ -3,7 +3,7 @@ title: Layer Reverse
 author:
 - name: Andrew Mercer
   affiliation: Riksantikvarieämbetet
-  email: andrew.mercer@raa.se
+  email: mercerraa@gmail.com
 date:  2025.01.23
 lang: en-GB
 papersize: a4
