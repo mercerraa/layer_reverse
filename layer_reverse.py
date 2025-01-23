@@ -7,21 +7,15 @@ import os
 
 class LayerReverse:
     def __init__(self, iface):
-        self.iface = iface  # Reference to QGIS interface
-        self.action = None  # Placeholder for the action (button)
-        self.toolbar = None  # Placeholder for the custom toolbar
+        self.iface = iface
+        self.action = None
+        self.toolbar = None
 
     def initGui(self):
-        # Create a toolbar for the plugin if needed
-        #self.toolbar = self.iface.addToolBar("Mercer Toolbar")
-        #self.toolbar.setObjectName("MercerToolbar")
-        # Create an action (button)
-        # self.action = QAction(QIcon(":/plugins/icon.png"), "Reverse layer order", self.iface.mainWindow())
+        # The structure used here was suggested by ChatGPT but required many revisions to actually function
+        # Set up button to run the plugin. Note that the pat to the icon.png is a workaround as the path suggested by QGIS documentation did not work 
         self.action = QAction(QIcon(os.path.join( os.path.dirname(__file__), 'icon.png' )), "Reverse layer order", self.iface.mainWindow())
         self.action.triggered.connect(self.run_script)
-
-        # Add the action (button) to the toolbar
-        #self.toolbar.addAction(self.action)
 
         # Add the action to the toolbar
         self.iface.addToolBarIcon(self.action)
@@ -33,17 +27,19 @@ class LayerReverse:
         self.iface.removePluginMenu("&Layer Reverse", self.action)
 
     def run_script(self):
+        # Get the Contents structure
         project = QgsProject.instance()
         root = project.layerTreeRoot()
-        selected = iface.layerTreeView().selectedLayers()
+        selected = iface.layerTreeView().selectedLayers() # Create list of highlighted layers. Note that a list is always created even if it is empty
+        # Loop through list of layers if that list conatins elements
         if len(selected)>0:
             for layer in selected:
                 node = root.findLayer(layer.id())
                 if node:
-                    parent = node.parent()
-                    clone = node.clone()
-                    parent.insertChildNode(0, clone)
-                    parent.removeChildNode(node)
+                    parent = node.parent() # identify the containing element (group)
+                    clone = node.clone() # clone the layer
+                    parent.insertChildNode(0, clone) # place clone at the top, within the parent
+                    parent.removeChildNode(node) # remove original
             iface.messageBar().pushMessage("Success", "Layer order reversed", level=Qgis.Success, duration=3)
         else:
             iface.messageBar().pushMessage("Warning", "No layers were highlighted", level=Qgis.Warning, duration=3)

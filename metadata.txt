@@ -15,4 +15,4 @@ repository=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
 homepage=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
 
 hasProcessingProvider=no
-# changelog=
+# changelog=2025.01.23 created.
