@@ -5,14 +5,15 @@ version=1.0
 qgisMinimumVersion=3.0
 author=Andrew Mercer
 email=mercerraa@gmail.com
+license=GPL-3.0
 
 about=Reverse order of highlighted layers
 tags=layers, contents
 experimental=True
 
 tracker=https://github.com/mercerraa/layer_reverse/issues
-repository=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
-homepage=https://github.com/mercerraa/qgisPlugins/tree/main/layer_reverse
+repository=https://github.com/mercerraa/layer_reverse
+homepage=https://mercerraa.github.io/
 
 hasProcessingProvider=no
 # changelog=2025.01.23 created.
