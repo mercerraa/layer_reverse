@@ -25,7 +25,7 @@ The plugin reverses the order of those plugins highlighted in the Contents, it w
 
 # Why
 
-The plugin came about mostly because of a wms from Lantmäteriet (Sweden) that loads a topographic map in seperate layers but in reverse order.
+The plugin came about mostly because of a wms from Lantmäteriet (Sweden) that loads a topographic map in separate layers but in reverse order.
 The text layer ends up at the bottom and the polygon layer with landuse is put on top.
 
 The problem is not unique to this particular case and arises when importing other large datasets.

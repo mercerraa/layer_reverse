@@ -30,7 +30,7 @@ class LayerReverse:
 
     def initGui(self):
         # The structure used here was suggested by ChatGPT but required many revisions to actually function
-        # Set up button to run the plugin. Note that the pat to the icon.png is a workaround as the path suggested by QGIS documentation did not work 
+        # Set up button to run the plugin. Note that the path to the icon.png is a workaround as the path suggested by QGIS documentation did not work 
         self.action = QAction(QIcon(os.path.join( os.path.dirname(__file__), 'icon.png' )), "Reverse layer order", self.iface.mainWindow())
         self.action.triggered.connect(self.run_script)
 
@@ -48,7 +48,7 @@ class LayerReverse:
         project = QgsProject.instance()
         root = project.layerTreeRoot()
         selected = iface.layerTreeView().selectedLayers() # Create list of highlighted layers. Note that a list is always created even if it is empty
-        # Loop through list of layers if that list conatins elements
+        # Loop through list of layers if that list contains elements
         if len(selected)>0:
             for layer in selected:
                 node = root.findLayer(layer.id())

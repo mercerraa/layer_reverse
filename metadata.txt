@@ -1,7 +1,7 @@
 [general]
 name=Layer Reverse
 description=Reverse order of highlighted layers
-version=1.0
+version=1.1
 qgisMinimumVersion=3.0
 author=Andrew Mercer
 email=mercerraa@gmail.com
@@ -9,11 +9,13 @@ license=GPL-3.0
 
 about=Reverse order of highlighted layers
 tags=layers, contents
-experimental=True
+experimental=False
 
 tracker=https://github.com/mercerraa/layer_reverse/issues
 repository=https://github.com/mercerraa/layer_reverse
 homepage=https://mercerraa.github.io/
 
 hasProcessingProvider=no
-# changelog=2025.01.23 created.
+changelog=2025.07.11 update
+  1.1 - trivial updates. Upgrade to non experimental as no bugs discovered
+  2025.01.23 1.0 created.
